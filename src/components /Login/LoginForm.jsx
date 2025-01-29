@@ -6,6 +6,7 @@ import {
 } from '@ant-design/icons';
 import { ProForm, ProFormDigit, ProFormText } from '@ant-design/pro-components';
 import { Space, Button } from 'antd';
+import { useNavigate } from 'react-router-dom';
 
 const iconStyles = {
   marginInlineStart: '16px',
@@ -24,6 +25,9 @@ const waitTime = (time = 100) => {
 };
 
 const LoginF = () => {
+  const navigate = useNavigate();
+
+  const handleLogin = () => navigate('/home');
   return (
     <div>
       <ProForm
@@ -79,6 +83,7 @@ const LoginF = () => {
             style={{
               width: 'auto',
             }}
+            onClick={handleLogin}
           >
             Login
           </Button>
